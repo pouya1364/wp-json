@@ -20,13 +20,13 @@ class Json {
 
    public function build_table($array){
       // start table
-      $html = "<table id='myTable' class=tableView>";
+      $html = "<table id=myTable class=tableView>";
       // header row
-      $html .= '<tr class="header">';
+      $html .= '<tr>';
       $i = 0;
       foreach($array[0] as $key=>$value){
          if (!is_array($value)){
-                  $html .= '<th class=tableView onclick="sortTable('.$i.')">' . htmlspecialchars($key) . '</th>';
+                  $html .= '<th onclick="sortTable('.$i.')">' . htmlspecialchars($key) . '<i class="arrow down"></i></th>';
                $i += 1;
          }
       }

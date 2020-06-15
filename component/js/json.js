@@ -3,7 +3,7 @@ function showMoreInfo(values) {
     fetch('http://jsonplaceholder.typicode.com/users/'+values.id)
         .then(response => response.json())
         .then(data => {
-            html = "<table class='container'>";
+            html = "<table class=zui-table>";
             html +=recurseObject(data);
             html += "</table>";
             let tableElement = document.getElementById("userDetail");
@@ -15,17 +15,17 @@ function showMoreInfo(values) {
 function recurseObject(data) {
     // Loop through object and add table cells
     for (var prop in data) {
-       
-        if (typeof (data[prop]) == 'object') {
-            html += "<tr><th>" + prop + "</th>";
+      html += "<tr >";
+      if (typeof (data[prop]) == 'object') {
+            html += "<th>" + prop + "</th>";
             recurseObject(data[prop]);
-            console.log(data[prop]);
-        } else {
-            html += "<tr><th>" + prop + "</th>";
-    
-            html += "<td>" + data[prop] + "</td></tr>";
-        }
+      } else {
+            html += "<th>" + prop + "</th>";
+            html += "<td>" + data[prop] + "</td>";
+      }
     }
+    
+  html += "</tr>";
     
     return html;
 }
