@@ -15,7 +15,7 @@
             $newJson = new Json();
             $get_data = $newJson->callAPI('http://jsonplaceholder.typicode.com/users');
             $response = json_decode($get_data, true);
-            echo $newJson->build_table($response);
+            print_r ($newJson->build_table($response));
         ?>
     </div>
     <div id='userDetail'></div>
