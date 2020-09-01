@@ -7,7 +7,7 @@
     <body>
     <div id='wrapper'>
         <a name="top" class="cd-top"></a>
-        <!--content here-->
+        <!----content here---->
         <input type="text" id="myInput" onkeyup="searchFunc()" placeholder="Search for ID..">
         
         <?php 
