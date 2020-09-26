@@ -32,7 +32,7 @@ class Json {
       }
       $html .= '</tr>';
 
-      // data rows
+      // show data rows 
       foreach( $array as $key=>$value){
          $html .= "<tr id=$value[id] onclick='showMoreInfo(this)'>";
          foreach($value as $key2=>$value2){
@@ -42,7 +42,7 @@ class Json {
          $html .= '</tr>';
       }
 
-      // finish table and return it
+      // finish table and return data
 
       $html .= '</table>';
       return $html;
